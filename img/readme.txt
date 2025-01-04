@@ -1,0 +1,1 @@
+En esta sección o carpeta están todas las imagenes destinadas a la elaboración del READMI.
