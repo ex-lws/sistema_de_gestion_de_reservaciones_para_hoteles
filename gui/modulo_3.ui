@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ventana_reservar</class>
+ <widget class="QDialog" name="ventana_reservar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>768</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1024</width>
+    <height>768</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>1024</width>
+    <height>768</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>1024</width>
+    <height>768</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Ventana para realizar una reservación</string>
+  </property>
+  <widget class="QLabel" name="fondo_reservaciones">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1031</width>
+     <height>771</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>reservar - new res (1).png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabs">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>250</y>
+     <width>761</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Century Gothic</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* QTabWidget */
+QTabWidget::pane {
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+    background-color: #ffffff; /* Fondo blanco para el área de contenido */
+}
+
+/* Pestañas grises */
+QTabBar::tab {
+    background-color: #e0e0e0;
+    color: #333333;
+    padding: 8px 16px;
+    border: 1px solid #c0c0c0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin: 2px;
+}
+
+/* Pestaña seleccionada */
+QTabBar::tab:selected {
+    background-color: #d0d0d0; /* Gris claro para la pestaña seleccionada */
+    border: 1px solid #a0a0a0;
+    color: #000000;
+}
+
+/* Pestaña no seleccionada */
+QTabBar::tab:!selected {
+    background-color: #f0f0f0;
+    color: #555555;
+}
+
+/* Hover sobre pestaña */
+QTabBar::tab:hover {
+    background-color: #d8d8d8;
+    border: 1px solid #b0b0b0;
+}
+
+/* Botones de desplazamiento (cuando hay muchas pestañas) */
+QTabBar QToolButton {
+    background-color: #f0f0f0;
+    border: none;
+    color: #555555;
+}
+
+/* Estilo de los botones al hacer hover */
+QTabBar QToolButton:hover {
+    background-color: #d0d0d0;
+}
+
+/* Estilo de la pestaña cuando está deshabilitada */
+QTabBar::tab:disabled {
+    color: #888888;
+    background-color: #e8e8e8;
+    border: 1px solid #d0d0d0;
+}
+
+/* Ajustes de tamaño */
+QTabBar::tab {
+    min-width: 100px;
+    min-height: 32px;
+}
+</string>
+   </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Rounded</enum>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="elideMode">
+    <enum>Qt::ElideLeft</enum>
+   </property>
+   <property name="usesScrollButtons">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="tab_cliente">
+    <attribute name="title">
+     <string>Cliente</string>
+    </attribute>
+    <widget class="QLabel" name="instruccin_datos_cliente">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>20</y>
+       <width>291</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>26</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Datos del cliente</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_nombres_cliente">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>90</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Nombres:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_apellido_paterno_cliente">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>130</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Apellido paterno:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_apellido_materno_cliente">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>170</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Apellido materno:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_correo_cliente">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>210</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Correo electrónico:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_telefono_cliente">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>250</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Teléfono celular:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_direccion_cliente">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>290</y>
+       <width>151</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Dirección:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_nombres_cliente">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>90</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_apellido_paterno_cliente">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>130</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_apellido_materno_cliente">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>170</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_correo_cliente">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>210</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>@gmail.com</string>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_telefono_cliente">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>250</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>+52</string>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_direccion_cliente">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>290</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_cliente">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>91</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>logo_cliente.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_reservacion">
+    <attribute name="title">
+     <string>Reservarción</string>
+    </attribute>
+    <widget class="QLabel" name="instrucciones_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>30</y>
+       <width>421</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>26</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Datos de la reservación</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_check_in_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>160</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Fecha de llegada (check in)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_check_out_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>210</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Fecha de salida (check out)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_fecha_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>260</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Fecha de reservación</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_total_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>300</y>
+       <width>351</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Precio total (Con servicios de  mantenimiento):</string>
+     </property>
+    </widget>
+    <widget class="QDateTimeEdit" name="input_check_in_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>160</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="dateTime">
+      <datetime>
+       <hour>17</hour>
+       <minute>0</minute>
+       <second>0</second>
+       <year>2024</year>
+       <month>1</month>
+       <day>1</day>
+      </datetime>
+     </property>
+     <property name="time">
+      <time>
+       <hour>17</hour>
+       <minute>0</minute>
+       <second>0</second>
+      </time>
+     </property>
+     <property name="displayFormat">
+      <string>yyyy-MM-dd HH:mm:ss</string>
+     </property>
+    </widget>
+    <widget class="QDateTimeEdit" name="input_check_out_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>210</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="dateTime">
+      <datetime>
+       <hour>14</hour>
+       <minute>0</minute>
+       <second>0</second>
+       <year>2024</year>
+       <month>1</month>
+       <day>2</day>
+      </datetime>
+     </property>
+     <property name="date">
+      <date>
+       <year>2024</year>
+       <month>1</month>
+       <day>2</day>
+      </date>
+     </property>
+     <property name="time">
+      <time>
+       <hour>14</hour>
+       <minute>0</minute>
+       <second>0</second>
+      </time>
+     </property>
+     <property name="displayFormat">
+      <string>yyyy-MM-dd HH:mm:ss</string>
+     </property>
+    </widget>
+    <widget class="QDateTimeEdit" name="input_fecha_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>260</y>
+       <width>151</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="dateTime">
+      <datetime>
+       <hour>13</hour>
+       <minute>0</minute>
+       <second>0</second>
+       <year>2024</year>
+       <month>1</month>
+       <day>2</day>
+      </datetime>
+     </property>
+     <property name="date">
+      <date>
+       <year>2024</year>
+       <month>1</month>
+       <day>2</day>
+      </date>
+     </property>
+     <property name="time">
+      <time>
+       <hour>13</hour>
+       <minute>0</minute>
+       <second>0</second>
+      </time>
+     </property>
+     <property name="displayFormat">
+      <string>yyyy-MM-dd HH:mm:ss</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_total_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>300</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_form_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>91</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>logo_form.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_numero_habitacion">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>110</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Número de la habitación:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_numero_habitacion">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>110</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <zorder>input_check_in_reservacion</zorder>
+    <zorder>instruccion_check_out_reservacion</zorder>
+    <zorder>input_total_reservacion</zorder>
+    <zorder>instruccion_fecha_reservacion</zorder>
+    <zorder>input_check_out_reservacion</zorder>
+    <zorder>input_fecha_reservacion</zorder>
+    <zorder>instruccion_check_in_reservacion</zorder>
+    <zorder>instruccion_total_reservacion</zorder>
+    <zorder>instrucciones_reservacion</zorder>
+    <zorder>logo_form_reservacion</zorder>
+    <zorder>instruccion_numero_habitacion</zorder>
+    <zorder>input_numero_habitacion</zorder>
+   </widget>
+   <widget class="QWidget" name="tab_pago">
+    <attribute name="title">
+     <string>Pago</string>
+    </attribute>
+    <widget class="QLabel" name="isntrucciones_pago">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>40</y>
+       <width>271</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>26</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Datos del pago</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_fecha_pago_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>140</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Fecha de pago:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_monto_pagado_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>190</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Monto pagado:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="instruccion_metodo_pago_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>250</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Método de pago:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_monto_pagado_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>190</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="input_metodo_pago_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>250</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QDateTimeEdit" name="input_fecha_pago_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>140</y>
+       <width>161</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="dateTime">
+      <datetime>
+       <hour>13</hour>
+       <minute>30</minute>
+       <second>0</second>
+       <year>2024</year>
+       <month>1</month>
+       <day>1</day>
+      </datetime>
+     </property>
+     <property name="time">
+      <time>
+       <hour>13</hour>
+       <minute>30</minute>
+       <second>0</second>
+      </time>
+     </property>
+     <property name="displayFormat">
+      <string>yyyy-MM-dd HH:mm:ss</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_pago">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>logo_pago.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <zorder>input_monto_pagado_reservacion</zorder>
+    <zorder>input_metodo_pago_reservacion</zorder>
+    <zorder>instruccion_monto_pagado_reservacion</zorder>
+    <zorder>input_fecha_pago_reservacion</zorder>
+    <zorder>instruccion_fecha_pago_reservacion</zorder>
+    <zorder>instruccion_metodo_pago_reservacion</zorder>
+    <zorder>isntrucciones_pago</zorder>
+    <zorder>logo_pago</zorder>
+   </widget>
+   <widget class="QWidget" name="tab_guardar">
+    <attribute name="title">
+     <string>Guardar datos</string>
+    </attribute>
+    <widget class="QLabel" name="logo_guardar_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>361</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>logo_guarda_reservacion.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_insertar_datos_reservacion">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>150</y>
+       <width>201</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>-1</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">/* QPushButton */
+QPushButton {
+    background-color: #78c897; /* Verde suave */
+    color: #ffffff;
+    border: 2px solid #6aae84;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 18px;
+}
+
+/* Hover (cuando el cursor está sobre el botón) */
+QPushButton:hover {
+    background-color: #6aae84; /* Verde un poco más oscuro para hover */
+    border: 2px solid #5f9676;
+}
+
+/* Presionado (cuando se hace clic en el botón) */
+QPushButton:pressed {
+    background-color: #5f9676; /* Verde más oscuro para clic */
+    border: 2px solid #4e8264;
+    color: #e0e0e0;
+}
+
+/* Botón deshabilitado */
+QPushButton:disabled {
+    background-color: #c0c0c0; /* Gris claro para deshabilitado */
+    color: #888888;
+    border: 2px solid #b0b0b0;
+}
+
+/* Botón con foco (cuando está seleccionado con teclado o tab) */
+QPushButton:focus {
+    outline: none;
+    border: 2px solid #80bfff; /* Azul suave para indicar foco */
+}
+</string>
+     </property>
+     <property name="text">
+      <string>¡Vamos allá!</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btn_volver_menu">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>70</y>
+     <width>141</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Century Gothic</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background-color : transparent;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
