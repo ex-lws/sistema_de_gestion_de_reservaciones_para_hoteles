@@ -1,0 +1,2 @@
+En la carpeta de documentacion tenemos el diagrama entidad relacion de la base de datos original.
+Incluye las tablas originales, sus atributos y por ultimo la vista relacionada con los reportes de reservacion.
