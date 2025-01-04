@@ -1,0 +1,2 @@
+"src_gui" es la carpeta que contiene el proyecto o el sistema funcionando por medio de una interfaz gráfica.
+Los modulos tanto en su version de consola, como en la version GUI, estan separados para poder realizar pruebas anter de incluirlos al main de la interfaz grafica.

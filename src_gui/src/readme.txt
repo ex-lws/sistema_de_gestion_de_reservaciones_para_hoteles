@@ -1,0 +1,1 @@
+La carpeta "src" contiene todo lo relacionado con el sistema para poder funcionar por medio de la consola.
