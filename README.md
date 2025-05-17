@@ -63,5 +63,5 @@ El proyecto está realizado en un etorno virtual, por lo que las librerías vien
 ### Easter egg del sistema, que ofrece información del mismo, manual de recepcionista y objetivos
 ![Easter egg](img/easter_egg_ss.png)
 
-### Interfaz principal
-![Menú principal](img/login_ss.png)
+### Pantalla de Login
+![Login](img/login_pantalla_ss.png)
